@@ -243,8 +243,8 @@ npm run dev
 
 | Service | Role | URL |
 |---------|------|-----|
-| **Vercel** | Frontend (React/Vite) | _Add your Vercel URL here_ |
-| **Render** | Backend + Database (Express + SQLite) | _Add your Render URL here_ |
+| **Vercel** | Frontend (React/Vite) | [https://amazon-mpk3or0gk-kunalbothra7781-gmailcoms-projects.vercel.app](https://amazon-mpk3or0gk-kunalbothra7781-gmailcoms-projects.vercel.app) |
+| **Render** | Backend + Database (Express + SQLite) | [https://amazon-clone-q230.onrender.com/api/health](https://amazon-clone-q230.onrender.com/api/health) |
 
 ### Deploy Backend → Render.com (Free)
 

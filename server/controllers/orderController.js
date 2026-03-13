@@ -125,3 +125,33 @@ export function getOrderById(req, res) {
         res.status(500).json({ error: 'Failed to fetch order' });
     }
 }
+
+/**
+ * PATCH /api/orders/:id/status
+ * Body: { status: 'Delivered' }
+ */
+export function updateOrderStatus(req, res) {
+    try {
+        const { id } = req.params;
+        const { status } = req.body;
+
+        if (!status) {
+            return res.status(400).json({ error: 'Status is required' });
+        }
+
+        const result = db.prepare('UPDATE orders SET status = ? WHERE id = ?').run(status, id);
+
+        if (result.changes === 0) {
+            return res.status(404).json({ error: 'Order not found' });
+        }
+
+        const updatedOrder = db.prepare('SELECT * FROM orders WHERE id = ?').get(id);
+        res.json({
+            ...updatedOrder,
+            shipping_address: (() => { try { return JSON.parse(updatedOrder.shipping_address); } catch { return updatedOrder.shipping_address; } })()
+        });
+    } catch (err) {
+        console.error('updateOrderStatus error:', err);
+        res.status(500).json({ error: 'Failed to update order status' });
+    }
+}

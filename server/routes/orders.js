@@ -2,7 +2,7 @@
  * routes/orders.js – Order API routes
  */
 import { Router } from 'express';
-import { createOrder, getUserOrders, getOrderById } from '../controllers/orderController.js';
+import { createOrder, getUserOrders, getOrderById, updateOrderStatus } from '../controllers/orderController.js';
 
 const router = Router();
 
@@ -14,5 +14,8 @@ router.get('/user/:userId', getUserOrders);
 
 // GET    /api/orders/:id     → Get single order
 router.get('/:id', getOrderById);
+
+// PATCH  /api/orders/:id/status → Update order status
+router.patch('/:id/status', updateOrderStatus);
 
 export default router;
