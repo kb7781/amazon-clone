@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: #eaeded;
+    color: #0f1111;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  /* Amazon-style button */
+  .btn-amazon {
+    @apply bg-amazon text-black font-medium py-2 px-4 rounded-sm border border-[#a88734] 
+           hover:bg-amazon-hover transition-colors duration-150 cursor-pointer text-sm;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  }
+
+  .btn-amazon-primary {
+    @apply bg-[#FFD814] text-black font-medium py-2 px-6 rounded-full border border-[#FCD200]
+           hover:bg-[#F7CA00] transition-colors duration-150 cursor-pointer text-sm;
+  }
+
+  .btn-amazon-secondary {
+    @apply bg-[#FFA41C] text-black font-medium py-2 px-6 rounded-full border border-[#FF8F00]
+           hover:bg-[#FA8900] transition-colors duration-150 cursor-pointer text-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .product-card {
+    @apply bg-white rounded border border-gray-200 p-3 flex flex-col card-hover cursor-pointer;
+  }
+
+  .skeleton-box {
+    @apply rounded animate-skeleton bg-gray-200;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-gray-900 mb-4;
+  }
+
+  .input-amazon {
+    @apply border border-gray-400 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amazon focus:border-amazon w-full;
+  }
+
+  .nav-link {
+    @apply text-white text-sm hover:ring-1 hover:ring-white px-2 py-1 rounded transition-all duration-150 cursor-pointer;
+  }
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Carousel transition */
+.carousel-slide {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Star rating */
+.star-filled {
+  color: #ff9900;
+}
+.star-empty {
+  color: #d1d5db;
+}
