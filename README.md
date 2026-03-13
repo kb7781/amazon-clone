@@ -243,7 +243,7 @@ npm run dev
 
 | Service | Role | URL |
 |---------|------|-----|
-| **Vercel** | Frontend (React/Vite) | [https://amazon-two-taupe.vercel.app](https://amazonbykunal.vercel.app/) |
+| **Vercel** | Frontend (React/Vite) | [https://amazonbykunal.vercel.app/](https://amazonbykunal.vercel.app/) |
 | **Render** | Backend + Database (Express + SQLite) | [https://amazon-clone-q230.onrender.com/api/health](https://amazon-clone-q230.onrender.com/api/health) |
 
 ### Deploy Backend → Render.com (Free)
