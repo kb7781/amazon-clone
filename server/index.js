@@ -3,6 +3,10 @@
  */
 import express from 'express';
 import cors from 'cors';
+
+// Auto-seed database on startup (idempotent — skips if data exists)
+import './seed.js';
+
 import productsRouter from './routes/products.js';
 import categoriesRouter from './routes/categories.js';
 import cartRouter from './routes/cart.js';

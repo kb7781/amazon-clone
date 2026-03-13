@@ -3,7 +3,7 @@ services:
     name: amazon-clone-api
     runtime: node
     buildCommand: npm install
-    startCommand: node server/seed.js && node server/index.js
+    startCommand: node server/index.js
     envVars:
       - key: NODE_ENV
         value: production
